@@ -2,18 +2,18 @@
 
 //EDIT THIS CODE TO REFLECT THE INDEX.HANDLEBARS
 $(function () {
-    $(".delete").on("click", function (event) {
-      var id = $(this).data("id");
+    // $(".delete").on("click", function (event) {
+    //   var id = $(this).data("id");
   
-      $.ajax("/api/cats/" + id, {
-        type: "DELETE",
-      }).then(
-        function () {
-          console.log("Delete cat with id ", id);
-          location.reload();
-        }
-      );
-    });
+    //   $.ajax("/api/burgers/" + id, {
+    //     type: "DELETE",
+    //   }).then(
+    //     function () {
+    //       console.log("Delete burger with id ", id);
+    //       location.reload();
+    //     }
+    //   );
+    // });
     $(".change-sleep").on("click", function (event) {
       var id = $(this).data("id");
       var newSleep = $(this).data("newsleep");

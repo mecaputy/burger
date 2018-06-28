@@ -1,14 +1,22 @@
 <img src="/Users/martinacaputy/apps/burger/public/assets/js/burgers.js">
 <h1>Eat-da-Burger</h1>
 
-
+<ul>
+  {{#each burgers}} 
+    {{#unless devoured}} 
+      {{> burgers/burger-block devoured=false}}
+    {{/unless}} 
+  {{/each}}
+  <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour it!
+	</button>
+</ul>
 
 
 <form class="create-form">
-
   <div class="form-group">
-    <label for="ca">Cat Name:</label>
+    <label for="ca"></label>
     <input type="text" id="burger-name" name="name">
   </div>
-
+  <button class="add-burger" data-id="{{this.id}}">Submit</button>
 </form>
+<p>Enter the burger you want to eat and hit the "Submit" button</p>
