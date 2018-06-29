@@ -14,11 +14,11 @@ router.get("/", function (req, res) {
     });
 });
 
-router.post("/api/burger", function (req, res) {
+router.post("/api/burgers", function (req, res) {
     burger.create([
-        "burgers", "devoured"
+        "burgers"
     ], [
-            req.body.burgers, req.body.devoured
+            req.body.burgers
         ], function (result) {
             // Send back the ID of the new burger
             res.json({ id: result.insertId });
@@ -34,6 +34,7 @@ router.put("/api/burgers/:id", function(req, res) {
       devoured: req.body.devoured
     }, condition, function(result) {
       if (result.changedRows == 0) {
+          console.log("no change")
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
       } else {

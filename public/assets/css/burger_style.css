@@ -1,3 +1,27 @@
-background {
-    color: yellow;
+.header {
+    text-align: center;
+    margin-top: 70px;
+    margin-left: 200px;
+    font-family: 'Freckle Face', cursive;
+}
+.list {
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 150px;
+    font-family: 'Freckle Face', cursive;
+}
+#addBurger {
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+.picture {
+    text-align: center;
+    margin-top: 100px;
+}
+#burger-name {
+    width: 300px;
+    margin-left: 75px;
+    text-align: center;
 }

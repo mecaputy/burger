@@ -1,22 +1,44 @@
-<img src="/Users/martinacaputy/apps/burger/public/assets/js/burgers.js">
-<h1>Eat-da-Burger</h1>
+<div class="container">
 
+
+<h1 class="header">Welcome to The Krusty Krab</h1>
+
+<div class="list row">
+  <div class="float-left">
+    <h4>Ordered Burgers:</h4>
 <ul>
   {{#each burgers}} 
     {{#unless devoured}} 
-      {{> burgers/burger-block devoured=false}}
+     <ul>{{burgers}}
+      <button class="change-devoured" data-id="{{id}}" data-newdevoured="1">Steal it!
+	  </button></ul> 
     {{/unless}} 
   {{/each}}
-  <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour it!
-	</button>
 </ul>
+</div>
+<div class="float-right">
+  <h4>Stolen Burgers:</h4>
+<ul>
+  {{#each burgers}} 
+    {{#if devoured}} 
+     <ul>{{burgers}}</ul> 
+    {{/if}} 
+  {{/each}}
+</ul>
+</div>
+</div>
 
 
-<form class="create-form">
+<form class="create-form" id="addBurger">
   <div class="form-group">
-    <label for="ca"></label>
-    <input type="text" id="burger-name" name="name">
+    {{!-- <input type="text" id="burger-name" name="name"> --}}
+    <textarea class="form-control" id="burger-name" rows="2"></textarea>
   </div>
-  <button class="add-burger" data-id="{{this.id}}">Submit</button>
+  <button type="submit">Add a Burger</button>
 </form>
-<p>Enter the burger you want to eat and hit the "Submit" button</p>
+{{!-- <p>Enter the burger you want to eat and hit the "Add a Burger" button</p> --}}
+  
+<div class="picture">
+<img src="./assets/img/Patty.png">
+</div>
+</div>
